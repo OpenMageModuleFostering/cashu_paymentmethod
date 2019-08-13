@@ -33,7 +33,45 @@ class Cashu_Paymentmethod_PaymentController extends Mage_Core_Controller_Front_A
 				// Payment was successful, so update the order's state, send order email and move to the success page
 				$order = Mage::getModel('sales/order');
 				$order->loadByIncrementId($orderId);
-				$order->setState(Mage_Sales_Model_Order::STATE_PROCESSING, true, 'Gateway has authorized the payment.');
+				//$order->setState(Mage_Sales_Model_Order::STATE_PROCESSING, true, 'Gateway has authorized the payment.');
+				
+				/** trying to create invoice **/
+				try {
+					
+					
+				    if(!$order->canInvoice()):
+				
+				        //Mage::throwException(Mage::helper('core')->__('cannot create invoice !'));
+				        Mage::throwException(Mage::helper('core')->__('cannot create an invoice !'));
+				
+				    else:
+				    
+				    /** create invoice  **/
+				    //$invoiceId = Mage::getModel('sales/order_invoice_api')->create($order->getIncremenetId(), array());
+				    $invoice = Mage::getModel('sales/service_order', $order)->prepareInvoice();
+				    
+				    if(!$invoice->getTotalQty()):
+				    Mage::throwException(Mage::helper('core')->__('cannot create an invoice without products !'));
+				    endif;
+				    
+				    $invoice->setRequestedCaptureCase(Mage_Sales_Model_Order_Invoice::CAPTURE_ONLINE);
+				    $invoice->register();
+				    $transactionSave = Mage::getModel('core/resource_transaction')->addObject($invoice)->addObject($invoice->getOrder());
+				    $transactionSave->save();
+				    
+				    $order->setState(Mage_Sales_Model_Order::STATE_PROCESSING, true, 'Gateway has authorized the payment.');
+				    /** load invoice **/
+				    //$invoice = Mage::getModel('sales/order_invoice')->loadByIncrementId($invoiceId);
+				    /** pay invoice **/
+				    //$invoice->capture()->save();
+				    
+				
+				
+				    endif;
+				}
+				catch(Mage_Core_Exception $e){
+					Mage::throwException(Mage::helper('core')->__('cannot create an invoice !'));
+					}
 				
 				$order->sendNewOrderEmail();
 				$order->setEmailSent(true);
