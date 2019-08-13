@@ -1,9 +1,9 @@
 <?php
 
-class Cashu_Paymentmethod_Adminhtml_Model_System_Config_Source_Currencyoptions {
-	/***/
-	
-	/**
+class Cashu_Prepaid_Adminhtml_Model_System_Config_Source_Currencyoptions {
+    /***/
+
+    /**
      * Options getter
      *
      * @return array
@@ -28,5 +28,5 @@ class Cashu_Paymentmethod_Adminhtml_Model_System_Config_Source_Currencyoptions {
             array('value' => 'omr', 'label'=>Mage::helper('adminhtml')->__('OMR')),
         );
     }
-	
-	}
+
+    }

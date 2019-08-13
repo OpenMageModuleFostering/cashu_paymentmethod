@@ -3,8 +3,8 @@
    <sections>
         <payment>
             <groups>
-                <paymentmethod translate="label" module="paygate">
-                    <label>Cashu Payment Method</label>
+                <cashu_prepaid translate="label">
+                    <label>Cashu Payment Method ( prepaid )</label>
                     <sort_order>670</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
@@ -47,7 +47,7 @@
                         <currency translate="label">
                             <label>currency</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>paymentmethod_adminhtml/system_config_source_currencyoptions</source_model>
+                            <source_model>prepaid_adminhtml/system_config_source_currencyoptions</source_model>
                             <sort_order>4</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -56,7 +56,7 @@
                         <language translate="label">
                             <label>language</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>paymentmethod_adminhtml/system_config_source_languageoptions</source_model>
+                            <source_model>prepaid_adminhtml/system_config_source_languageoptions</source_model>
                             <sort_order>5</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -70,14 +70,23 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                         </display_text>-->
-                        <payment_gateway_url translate="label">
+                        <!--<payment_gateway_url translate="label">
                             <label>payment gateway url (staging or live)</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>7</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
-                        </payment_gateway_url>
+                        </payment_gateway_url>-->
+                        <test translate="label">
+                            <label>Staging (test mode)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </test>
                         <encryption_keyword translate="label">
                             <label>encryption keyword</label>
                             <frontend_type>text</frontend_type>
@@ -87,7 +96,7 @@
                             <show_in_store>0</show_in_store>
                         </encryption_keyword>
                         <return_url>
-                            <label>Note : you need to specify your Return URL http://example.com/paymentmethod/payment/response</label>
+                            <label>Note : you need to specify your Return URL http://example.com/[ language code ]/cashu/payment/response</label>
                             <frontend_type>label</frontend_type>
                             <sort_order>9</sort_order>
                             <show_in_default>1</show_in_default>
@@ -95,7 +104,7 @@
                             <show_in_store>0</show_in_store>
                         </return_url>
                     </fields>
-                </paymentmethod>
+                </cashu_prepaid>
             </groups>
         </payment>
     </sections>

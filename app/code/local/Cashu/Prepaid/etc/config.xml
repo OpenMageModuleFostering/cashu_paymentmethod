@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Cashu_Prepaid>
+            <version>0.0.1</version>
+        </Cashu_Prepaid>
+    </modules>
+    <global>
+        <blocks>
+            <prepaid>
+                <class>Cashu_Prepaid_Block</class>
+            </prepaid>
+            <checkout>
+                <rewrite>
+                    <onepage_payment_methods>Cashu_Prepaid_Block_Onepage_Payment_Methods</onepage_payment_methods>
+                </rewrite>
+            </checkout>
+        </blocks>
+        <helpers>
+            <prepaid>
+                <class>Cashu_Prepaid_Helper</class>
+            </prepaid>
+        </helpers>
+        <models>
+            <prepaid>
+                <class>Cashu_Prepaid_Model</class>
+            </prepaid>
+            <prepaid_adminhtml>
+                <class>Cashu_Prepaid_Adminhtml_Model</class>
+            </prepaid_adminhtml>
+        </models>
+        <resources>
+            <prepaid_setup>
+                <setup>
+                    <module>Cashu_Prepaid</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </prepaid_setup>
+            <prepaid_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </prepaid_write>
+            <prepaid_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </prepaid_read>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <cashu_prepaid>
+                <use>standard</use>
+                <args>
+                    <module>Cashu_Prepaid</module>
+                    <frontName>cashu</frontName>
+                </args>
+            </cashu_prepaid>
+        </routers>
+        <layout>
+            <updates>
+                <cashu_prepaid>
+                    <file>cashu/prepaid.xml</file>
+                </cashu_prepaid>
+            </updates>
+        </layout>
+    </frontend>
+    <default>
+        <payment>
+            <cashu_prepaid>
+                <active>1</active>
+
+                <order_status>pending</order_status>
+
+                <model>prepaid/pay</model>
+
+                <title>Cashu Payment Method</title>
+
+                <payment_action>sale</payment_action>
+
+                <allowspecific>0</allowspecific>
+
+                <sort_order>1</sort_order>
+            </cashu_prepaid>
+        </payment>
+    </default>
+</config>

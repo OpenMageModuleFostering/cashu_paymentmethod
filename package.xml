@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package>
     <name>Cashu_Paymentmethod</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <stability>stable</stability>
     <license>OSL</license>
     <channel>community</channel>
     <extends/>
-    <summary>Cashu integration for magento</summary>
-    <description>it allow users to use Cashu payment gateway in magento</description>
-    <notes>Fix issues related to invoices ( automatically create invoices and change orders states )</notes>
+    <summary>This extension will allow your customers to use Cashu payment gateway.</summary>
+    <description>This extension adds (Cashu Prepaid) option to your store payment methods. Upon adding this extension to your store, your customers will be able to complete payment through Cashu Gateway. This extension is customizable as you can configure it to meet your needs. Additionally, it allows you to add the requirements settings for your Cashu merchant account.</description>
+    <notes>Release version 1.0.2 Cashu Prepaid.</notes>
     <authors><author><name>Moe</name><user>Ghashim</user><email>moe@shopgo.me</email></author></authors>
-    <date>2012-08-16</date>
-    <time>12:52:09</time>
-    <contents><target name="magelocal"><dir name="Cashu"><dir name="Paymentmethod"><dir name="Adminhtml"><dir name="Model"><dir name="System"><dir name="Config"><dir name="Source"><file name="Currencyoptions.php" hash="8dcf73dc698c933a22682b12bff67983"/><file name="Languageoptions.php" hash="4e58fddaae9cccce1850d8dfe2ff28c7"/></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="627c69e6846849f116c17f179be4bb86"/></dir><dir name="Model"><file name="Pay.php" hash="23ba17975e2836e0e582d4430e4bbab7"/></dir><dir name="controllers"><file name="PaymentController.php" hash="ed7a5f74d5472a23ab48e10e23ae1c9e"/></dir><dir name="etc"><file name="config.xml" hash="2f89ffe89a66e2211efd6892f61a3dcd"/><file name="system.xml" hash="f060d0c076da9b6854c434a2d443672f"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="template"><file name="cashu" hash="d41d8cd98f00b204e9800998ecf8427e"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Cashu_Paymentmethod.xml" hash="5182f969b96434d61f9047f849443b44"/></dir></target></contents>
+    <date>2013-09-07</date>
+    <time>08:07:32</time>
+    <contents><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="cashu"><dir name="prepaid"><file name="redirect.phtml" hash="47ddb261c6490d8a54495f37b9d2a656"/><file name="success.phtml" hash="77ffda055051399341705ab03551404b"/></dir></dir></dir></dir></dir></dir></target><target name="magelocal"><dir name="Cashu"><dir name="Prepaid"><dir name="Adminhtml"><dir name="Model"><dir name="System"><dir name="Config"><dir name="Source"><file name="Currencyoptions.php" hash="b760577a305a9399108ecd49ffeef7a4"/><file name="Languageoptions.php" hash="0c8e797962b559f9eee121b605f7ddf1"/></dir></dir></dir></dir></dir><dir name="Block"><dir name="Onepage"><dir name="Payment"><file name="Methods.php" hash="5a13a81f710a7a1ed82876bffa9adda5"/></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="65fdcf67427340a53d3ea99e24851fdc"/></dir><dir name="Model"><file name="Pay.php" hash="3497b01efe6453e5e6dd74c24ac68860"/></dir><dir name="controllers"><file name="IndexController.php" hash="1b10fcb45b0f7d345762be34d9c355c5"/><file name="PaymentController.php" hash="33a1e0cc9e123cbd49ea8f4e5bb196b6"/></dir><dir name="etc"><file name="config.xml" hash="6dbafc56764bb6b56bd13d8c54e261c1"/><file name="system.xml" hash="e562265d36d006add836b5788399f67e"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Cashu_Prepaid.xml" hash="cd71a8448fa8d15897d1d5bf9a4ecf31"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
 </package>

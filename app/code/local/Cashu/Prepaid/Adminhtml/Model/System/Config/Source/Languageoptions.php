@@ -1,9 +1,9 @@
 <?php
 
-class Cashu_Paymentmethod_Adminhtml_Model_System_Config_Source_Languageoptions {
-	/***/
-	
-	/**
+class Cashu_Prepaid_Adminhtml_Model_System_Config_Source_Languageoptions {
+    /***/
+
+    /**
      * Options getter
      *
      * @return array
@@ -15,5 +15,5 @@ class Cashu_Paymentmethod_Adminhtml_Model_System_Config_Source_Languageoptions {
             array('value' => 'ar', 'label'=>Mage::helper('adminhtml')->__('ar')),
         );
     }
-	
-	}
+
+    }
