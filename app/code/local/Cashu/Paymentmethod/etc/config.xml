@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Cashu_Paymentmethod>
+            <version>1.0.0</version>
+        </Cashu_Paymentmethod>
+    </modules>
+    <global>
+        <blocks>
+            <paymentmethod>
+                <class>Cashu_Paymentmethod_Block</class>
+            </paymentmethod>
+        </blocks>
+        <helpers>
+            <paymentmethod>
+                <class>Cashu_Paymentmethod_Helper</class>
+            </paymentmethod>
+        </helpers>
+        <models>
+            <paymentmethod>
+                <class>Cashu_Paymentmethod_Model</class>
+            </paymentmethod>
+            <paymentmethod_adminhtml>
+                <class>Cashu_Paymentmethod_Adminhtml_Model</class>
+            </paymentmethod_adminhtml>
+        </models>
+        <resources>
+            <paymentmethod_setup>
+                <setup>
+                    <module>Cashu_Paymentmethod</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </paymentmethod_setup>
+            <paymentmethod_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </paymentmethod_write>
+            <paymentmethod_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </paymentmethod_read>
+        </resources>
+    </global>
+    <default>
+        <payment>
+            <paymentmethod>
+                <active>1</active>
+                
+                <order_status>pending</order_status>
+                
+                <model>paymentmethod/pay</model>
+                
+                <title>Cashu Payment Method</title>
+                
+                <payment_action>sale</payment_action>
+                
+                <allowspecific>0</allowspecific>
+                
+                <sort_order>1</sort_order>
+            </paymentmethod>
+        </payment>
+    </default>
+    <frontend>
+        <routers>
+            <paymentmethod>
+                <use>standard</use>
+                <args>
+                    <module>Cashu_Paymentmethod</module>
+                    <frontName>paymentmethod</frontName>
+                </args>
+            </paymentmethod>
+        </routers>
+    </frontend>
+</config>
