@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Cashu_Paymentmethod",
+    "name": "OpenMageModuleFostering\/Cashu_Paymentmethod",
     "type": "magento-module",
     "license": "OSL",
     "homepage": "",
     "description": "This extension will allow your customers to use Cashu payment gateway.",
     "authors": [
-    {
-        "name": "Moe",
-        "email": "moe@shopgo.me"
-    }
-],
+        {
+            "name": "Moe",
+            "email": "moe@shopgo.me"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
